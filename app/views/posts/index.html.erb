@@ -1,18 +1,18 @@
 <br><br>
 <h2>Members Posts<h2>
 
-<% @post.each do |post|%>
+<% @posts.each do |post|%>
   <ul>
     <li>
-      <%= if user_signed_in? %>
-        <h3>Author: <%=@post.username%></h3>
+      <% if user_signed_in? %>
+        <h4>Author: <%=post.user.username%></h4>
       <% end %>
     </li>
     <li>
-      <h3>Title: <%=@post.title%></h3>
+      <h4>Title: <%=post.title%></h3>
     </li>
     <li>
-      <h3>Context: <%=@post.body%></h3>
+      <h4>Context: <%=post.body%></h4>
     </li>
 </ul>
 <%end%>
