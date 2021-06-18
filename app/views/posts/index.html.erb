@@ -5,14 +5,14 @@
   <ul>
     <li>
       <% if user_signed_in? %>
-        <h4>Author: <%=post.user.username%></h4>
+        <h5>Author:</h5> <span><%=post.user.username%></span>
       <% end %>
     </li>
     <li>
-      <h4>Title: <%=post.title%></h3>
+      <p>Title:</p> <span><%=post.title%></span>
     </li>
     <li>
-      <h4>Context: <%=post.body%></h4>
+      <h5>Context:</h5> <span><%=post.body%></span>
     </li>
 </ul>
 <%end%>
