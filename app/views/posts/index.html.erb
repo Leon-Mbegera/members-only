@@ -1,4 +1,18 @@
 <br><br>
-<%=@post.username%>
-<%=@post.title%>
-<%=@post.body>
+<h2>Members Posts<h2>
+
+<% @post.each do |post|%>
+  <ul>
+    <li>
+      <%= if user_signed_in? %>
+        <h3>Author: <%=@post.username%></h3>
+      <% end %>
+    </li>
+    <li>
+      <h3>Title: <%=@post.title%></h3>
+    </li>
+    <li>
+      <h3>Context: <%=@post.body%></h3>
+    </li>
+</ul>
+<%end%>
