@@ -1,0 +1,23 @@
+<br><br>
+<h2>Members Posts</h2>
+
+<% @posts.each do |post|%>
+  <ul>
+      <% if user_signed_in? %>
+      <li>
+        <p>Author: <span><%=post.user.username%></span></p>
+      </li>
+      <% end %>
+    <li>
+      <p>Title: <span><%=post.title%></span></p>
+    </li>
+    <li>
+      <p>Context: <span><%=post.body%></span></p>
+    </li>
+  </ul>
+  <hr>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Create Post", new_post_path, class: "btn btn-secondary" %>
+<% end %>
