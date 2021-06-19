@@ -3,16 +3,16 @@
 
 <% @posts.each do |post|%>
   <ul>
-    <li>
       <% if user_signed_in? %>
-        <h5>Author:</h5> <span><%=post.user.username%></span>
+      <li>
+        <p>Author: <span><%=post.user.username%></span></p>
+      </li>
       <% end %>
+    <li>
+      <p>Title: <span><%=post.title%></span></p>
     </li>
     <li>
-      <p>Title:</p> <span><%=post.title%></span>
+      <p>Context: <span><%=post.body%></span></p>
     </li>
-    <li>
-      <h5>Context:</h5> <span><%=post.body%></span>
-    </li>
-</ul>
-<%end%>
+  </ul>
+<% end %>
