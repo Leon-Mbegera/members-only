@@ -18,4 +18,6 @@
   <hr>
 <% end %>
 
-<%= link_to "Create Post", new_post_path, class: "btn btn-secondary" %>
+<% if user_signed_in? %>
+  <%= link_to "Create Post", new_post_path, class: "btn btn-secondary" %>
+<% end %>
