@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
+  <br>
+
+  <% if !user_signed_in? %>
+    <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary" %>
+    <%= link_to "Login", new_user_registration_path, class:"btn btn-secondary" %>
+  <% else %>
+    <%= link_to "Sign Out", model, class:"btn btn-secondary" %>
+  <% end %> 
   </body>
+
 </html>
