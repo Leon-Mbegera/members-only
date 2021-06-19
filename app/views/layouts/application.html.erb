@@ -11,15 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
   <br>
-
   <% if !user_signed_in? %>
     <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary" %>
     <%= link_to "Login", new_user_registration_path, class:"btn btn-secondary" %>
   <% else %>
     <%= link_to "Sign Out", destroy_user_session_path, method: 'delete', class:"btn btn-secondary" %>
-  <% end %> 
+  <% end %>
+    <%= yield %>
+  <br>
   </body>
-
 </html>
